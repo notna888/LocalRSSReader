@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>please work</title>
+  <script type="text/javascript" src="./testing.js"></script>
+</head>
+<body>
+
+  <script>
+  isBrowserCompatible();
+  </script>
+
+  <input type="file" id="files" name="files[]" />
+  <!-- <output id="list"></output> -->
+  <div id = "outputDiv"> </div>
+  <br>
+
+  <script>
+    function handleFileSelect(evt) {
+      var files = evt.target.files; // FileList object
+
+      // files is a FileList of File objects. List some properties.
+      var output = [];
+      for (var i = 0, f; f = files[i]; i++) {
+        printFileDetails(f);
+      }
+      //document.getElementById('list').innerHTML = '<ul>' + output.join('') + '</ul>';
+    }
+
+    document.getElementById('files').addEventListener('change', handleFileSelect, false);
+  </script>
+
+  <!-- <script>
+    function handleFileSelect(evt) {
+      var files = evt.files.target;
+      alert('script successful');
+      //handleFileSelectionJS(evt);
+      var thingy = files[0];
+      letsGO(thingy);
+    }
+
+    document.getElementById('files').addEventListener('change', handleFileSelect, false);
+  </script> -->
+
+
+</body>
+</html>
